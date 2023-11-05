@@ -1,0 +1,30 @@
+{
+  "name": "rsg-core-snippets",
+  "publisher": "Hamidreza",
+  "displayName": "RSG-Core Snippets",
+  "description": "A collection of snippets to work with rsg-core",
+  "version": "1.7.0",
+  "icon": "images/logo.png",
+  "homepage": "https://github.com/RE2-M/RSG-Core-Snippets/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RE2-M/RSG-Core-Snippets.git"
+  },
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "author": {
+    "name": "Hamidreza"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

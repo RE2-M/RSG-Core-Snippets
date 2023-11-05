@@ -1,0 +1,545 @@
+{
+  // RSG CLIENT :START
+  "RSG CLIENT: OnPlayerLoaded": {
+    "prefix": ["OnPlayerLoaded", "OPL", "opl"],
+    "body": [
+      "RegisterNetEvent('RSGCore:Client:OnPlayerLoaded', function()",
+      "",
+      "end)",
+      ""
+    ],
+    "description": "OnPlayerLoaded"
+  },
+  "RSG CLIENT: OnPlayerUnload": {
+    "prefix": ["OnPlayerUnload", "UPL", "upl"],
+    "body": [
+      "RegisterNetEvent('RSGCore:Client:OnPlayerUnload', function()",
+      "",
+      "end)",
+      ""
+    ],
+    "description": "OnPlayerUnload"
+  },
+  "RSG CLIENT: UpdatePlayerData": {
+    "prefix": ["UpdatePlayerData", "UPD", "upd"],
+    "body": [
+      "RegisterNetEvent('RSGCore:Client:UpdatePlayerData', function()",
+      "",
+      "end)",
+      ""
+    ],
+    "description": "UpdatePlayerData"
+  },
+  "RSG SERVER/CLIENT Register a command": {
+    "prefix": "Command",
+    "body": ["RegisterCommand(${1:name},function(source,args) ", "", "end)"],
+    "description": "SERVER/CLIENT Register a command"
+  },
+  "RSG CLIENT/GetPlayerData": {
+    "prefix": "GetPlayerData",
+    "body": ["local ${1:variable} = RSGCore.Functions.GetPlayerData()"],
+    "description": "CLIENT/GetPlayerData"
+  },
+  "RSG CLIENT/Get the coords of an entity": {
+    "prefix": "GetCoords",
+    "body": [
+      "-- Return the vector 4 and with x,y,z and w",
+      "local ${1:variable} = RSGCore.Functions.GetCoords(${2:entity})"
+    ],
+    "description": "CLIENT/Get the coordinates from an entity, returns a vector3"
+  },
+  "RSG SERVER/CLIENT Check if the player has item or Items": {
+    "prefix": ["hasitem", "Ihas"],
+    "body": ["exports['rsg-inventory']:HasItem(--[[source, items, amount]])"],
+    "description": "SERVER/ Check if the player has an item"
+  },
+  "RSG CLIENT/Floating text on the screen": {
+    "prefix": "DrawText",
+    "body": [
+      "RSGCore.Functions.DrawText(${1:x}, ${2:y}, ${3:width}, ${4:height}, ${5:scale}, ${6:r}, ${7:g}, ${8:b}, ${9:alpha}, ${10:text})"
+    ],
+    "description": "CLIENT/DrawText"
+  },
+  "RSG CLIENT/ Draw text on a 3D space": {
+    "prefix": "DrawText3D",
+    "body": [
+      "RSGCore.Functions.DrawText3D(${1:x},${2:y},${3:z},${4:text})",
+      "",
+      ""
+    ],
+    "description": "CLIENT/DrawText3D Draw text on a 3D space"
+  },
+  "RSG CLIENT/Request Anim Dict": {
+    "prefix": ["RequestAnimDict", "RAD", "rad"],
+    "body": ["RSGCore.Functions.PlayAnim(${1:animDict})", "", ""],
+    "description": "CLIENT/RequestAnimation Dictionary"
+  },
+  "RSG CLIENT/Play Animation": {
+    "prefix": ["PlayAnim", "PA"],
+    "body": [
+      "RSGCore.Functions.PlayAnim(${1:animDict}, ${2:animName}, ${3:upperBodyOnly}, ${4:duration})",
+      "",
+      ""
+    ],
+    "description": "CLIENT/Play Animation"
+  },
+  "RSG CLIENT/Load a Model into memory": {
+    "prefix": "LoadModel",
+    "body": ["RSGCore.Functions.LoadModel(${1:model})"],
+    "description": "CLIENT/Load a Model into memory"
+  },
+  "RSG CLIENT/Load Anim Set into memory": {
+    "prefix": "LoadAnimSet",
+    "body": ["RSGCore.Functions.LoadAnimSet(${1:animset})"],
+    "description": "CLIENT/Load Anim Set into memory"
+  },
+  "RSG CLIENT/This print on the server console the table or value you pass (you need to open svgui)": {
+    "prefix": ["Debug"],
+    "body": ["RSGCore.Debug(${1:jsonobject})"],
+    "description": "CLIENT/Debug Print in server console a table or value"
+  },
+  "RSG CLIENT/Send a Nofitication from the client": {
+    "prefix": "Notify",
+    "body": ["RSGCore.Functions.Notify(${1:Text}, \"primary\", ${3:length})"],
+    "description": "CLIENT/Send a Nofitication from the client"
+  },
+  "RSG Callback/Create a callback and return a value": {
+    "prefix": ["CreateClientCallback", "CCCallback"],
+    "body": [
+      "RSGCore.Functions.CreateClientCallback(${1:name},function(source,cb,${2:args}) ",
+      "",
+      "end)",
+      ""
+    ],
+    "description": "Client/Create a callback and return a value"
+  },
+  "RSG CLIENT/Trigger a Client event with a return of a value": {
+    "prefix": ["TriggerClientCallback", "TCC"],
+    "body": [
+      "RSGCore.Functions.TriggerClientCallback(${1:name},function(${2:returnValue})",
+      "",
+      "end,${3:Datasend})"
+    ],
+    "description": "CLIENT/Trigger a client event with a return of a value"
+  },
+  "CLIENT/Trigger a server event with a return of a value": {
+    "prefix": ["TriggerCallback", "TC"],
+    "body": [
+      "RSGCore.Functions.TriggerCallback(${1:name},function(${2:returnValue})",
+      "",
+      "end,${3:Datasend})"
+    ],
+    "description": "CLIENT/Trigger a server event with a return of a value"
+  },
+  "RSG CLIENT/Progressbar": {
+    "prefix": ["ProgressBar", "PB"],
+    "body": [
+      "RSGCore.Functions.Progressbar(${1:name}, ${2:label}, ${3:duration}, ${4:useWileDead}, ${5:canCancel}, ${6:disableControls}, ${7:animation}, ${8:propTwo}, ${9:onFinish}, ${10:onCancel})"
+    ],
+    "description": "CLIENT/Progressbar"
+  },
+  "RSG CLIENT/ Get all vehicles from client": {
+    "prefix": "GetVehicles",
+    "body": ["RSGCore.Functions.GetVehicles()"],
+    "description": "CLIENT/GetVehicles Get all vehicles from client"
+  },
+  "RSG CLIENT/GetObjects": {
+    "prefix": "GetObjects",
+    "body": ["RSGCore.Functions.GetObjects()"],
+    "description": "CLIENT/GetObjects"
+  },
+  "RSG CLIENT/Return Players": {
+    "prefix": ["GetPlayers", "gp"],
+    "body": ["local ${1:players} = RSGCore.Functions.GetPlayers()"],
+    "description": "CLIENT/GetPlayers"
+  },
+  "RSG CLIENT/Return the closest Ped and distance": {
+    "prefix": ["GetClosestPed", "gcp"],
+    "body": [
+      "local ${1:player}, ${2:distance} = RSGCore.Functions.GetClosestPlayer()"
+    ],
+    "description": "CLIENT/GetClosestPed"
+  },
+  "RSG CLIENT/Check Player is wearing Gloves": {
+    "prefix": ["IsWearingGloves", "iwg"],
+    "body": [
+      "local ${1:isWearingGloves} = RSGCore.Functions.IsWearingGloves()"
+    ],
+    "description": "CLIENT/GetClosestPed"
+  },
+  "RSG CLIENT/Return the closest player and distance": {
+    "prefix": ["GetClosestPlayer", "gcp"],
+    "body": [
+      "local ${1:player}, ${2:distance} = RSGCore.Functions.GetClosestPlayer()"
+    ],
+    "description": "CLIENT/GetClosestPlayer"
+  },
+  "RSG CLIENT/ This return a table with the player source.": {
+    "prefix": ["GetPlayersFromCoords", "gpfc"],
+    "body": [
+      "local ${1:ClosestPlayers}= RSGCore.Functions.GetPlayersFromCoords(${2:coords},${3:distance})"
+    ],
+    "description": "CLIENT/GetPlayersFromCoords This return a table with the player source."
+  },
+  "RSG CLIENT/ return closest vehicle and the distance, argument coords is optional": {
+    "prefix": ["GetClosestVehicle", "gcv"],
+    "body": [
+      "local closeVeh,closeDist = RSGCore.Functions.GetClosestVehicle(${1:coords})"
+    ],
+    "description": "CLIENT/GetClosestVehicle return closest vehicle and the distance, argument coords is optional"
+  },
+  "RSG CLIENT/ return closest Object and the distance, argument coords is optional": {
+    "prefix": "GetClosestObject",
+    "body": [
+      "local closeObj,closeDist = RSGCore.Functions.GetClosestObject(${1:coords})"
+    ],
+    "description": "CLIENT/GetClosestObject return closest Object and the distance, argument coords is optional"
+  },
+  "RSGCLIENT/pass an entity and a list of bones and return the most closest to the player": {
+    "prefix": "GetClosestBone",
+    "body": [
+      "local bone,coords,distance = RSGCore.Functions.GetClosestBone(${1:entity},${2:list})"
+    ],
+    "description": "CLIENT/GetClosestBone pass an entity and a list of bones and return the most closest to the player"
+  },
+  "RSG CLIENT/pass distance between player and bone": {
+    "prefix": "GetBoneDistance",
+    "body": [
+      "local distance = RSGCore.Functions.GetBoneDistance(${1:entity}, ${2:boneType}, ${3:boneIndex})"
+    ],
+    "description": "CLIENT/GetBoneDistance pass Distance Between Player and Bone"
+  },
+  "RSG CLIENT/AttachProp": {
+    "prefix": "AttachProp",
+    "body": [
+      "local prop = RSGCore.Functions.AttachProp(${1:ped}, ${2:model}, ${3:boneId}, ${4:x}, ${5:y}, ${6:z}, ${7:xR}, ${8:yR}, ${9:zR}, ${10:vertex})"
+    ],
+    "description": "CLIENT/Attatch Prop To Ped"
+  },
+  "RSG CLIENT/ Spawn a vehicle from Server side": {
+    "prefix": "SpawnVehicle",
+    "body": [
+      "RSGCore.Functions.AttachProp(${1:model}, ${2:cb}, ${3:coords}, ${3:isNetworked}, ${4:teleportInto})"
+    ],
+    "description": "CLIENT/ Spawn a vehicle from Server side"
+  },
+  "RSG CLIENT/Delete a vehicle": {
+    "prefix": "DeleteVehicle",
+    "body": ["RSGCore.Functions.DeleteVehicle(${1:vehicle})"],
+    "description": "CLIENT/DeleteVehicle Delete a vehicle"
+  },
+  "RSG CLIENT/return the plate of the passed vehicle": {
+    "prefix": "GetPlate",
+    "body": ["local plate = QBCore.Functions.GetPlate(${1:vehicle})"],
+    "description": "CLIENT/GetPlate return the plate of the passed vehicle"
+  },
+  "RSG CLIENT/return the vehicle Label": {
+    "prefix": "GetVehicleLabel",
+    "body": ["local label = QBCore.Functions.GetVehicleLabel(${1:vehicle})"],
+    "description": "CLIENT/GetVehicleLabel return vehicle label"
+  },
+  "RSG CLIENT/return true or false if the coords are cleasr of others vehicles": {
+    "prefix": "SpawnClear",
+    "body": [
+      "local isClear = RSGCore.Functions.SpawnClear(${1:coords},${2:radius})"
+    ],
+    "description": "CLIENT/SpawnClear return true or false if the coords are cleasr of others vehicles"
+  },
+  "RSG CLIENT/LoadParticleDictionary": {
+    "prefix": "LoadParticleDictionary",
+    "body": ["RSGCore.Functions.LoadParticleDictionary(${1:dictionary})"],
+    "description": "CLIENT/LoadParticleDictionary"
+  },
+  "RSG CLIENT/StartParticleAtCoord": {
+    "prefix": "StartParticleAtCoord",
+    "body": [
+      "local particleHandle = RSGCore.Functions.StartParticleAtCoord(${1:dict}, ${2:ptName}, ${3:looped}, ${4:coords}, ${5:rot}, ${6:scale}, ${7:alpha}, ${8:color}, ${9:duration})"
+    ],
+    "description": "CLIENT/StartParticleAtCoord"
+  },
+  "RSG CLIENT/StartParticleOnEntity": {
+    "prefix": "StartParticleOnEntity",
+    "body": [
+      "local particleHandle = RSGCore.Functions.StartParticleOnEntity(${1:dict}, ${2:ptName}, ${3:looped}, ${4:entity}, ${5:bone}, ${6:offset}, ${7:rot}, ${8:scale}, ${9:alpha}, ${10:color}, ${11:evolution}, ${11:duration})"
+    ],
+    "description": "CLIENT/StartParticleOnEntity"
+  },
+  "RSG CLIENT/GetStreetNametAtCoords": {
+    "prefix": "GetStreetNametAtCoords",
+    "body": [
+      "local streetname,cross = RSGCore.Functions.GetStreetNametAtCoords(${1:coords})"
+    ],
+    "description": "CLIENT/GetStreetNametAtCoords return street name and cross from coord"
+  },
+  "RSG CLIENT/GetZoneAtCoords": {
+    "prefix": "GetZoneAtCoords",
+    "body": ["local zone = RSGCore.Functions.GetZoneAtCoords(${1:coords})"],
+    "description": "CLIENT/GetZoneAtCoords return zone name"
+  },
+  "RSG CLIENT/GetCardinalDirection": {
+    "prefix": "GetCardinalDirection",
+    "body": [
+      "local direction = RSGCore.Functions.GetCardinalDirection(${1:entity})"
+    ],
+    "description": "CLIENT/GetCardinalDirection return cardinal direction of entity"
+  },
+  "RSG CLIENT/GetCurrentTime": {
+    "prefix": "GetCurrentTime",
+    "body": ["local time = RSGCore.Functions.GetCurrentTime()"],
+    "description": "CLIENT/GetCardinalDirection return current time"
+  },
+  "RSG CLIENT/GetGroundZCoord": {
+    "prefix": "GetGroundZCoord",
+    "body": ["local coords = RSGCore.Functions.GetGroundZCoord(coords)"],
+    "description": "CLIENT/GetGroundZCoord return ground z coordinates of given 3d coordinates"
+  },
+
+  // RSG CLIENT :END
+
+  // RSG SERVER :START
+
+  // RSG SERVER :END
+
+  // OXLib
+  "Ox Register Context CLIENT": {
+    "prefix": "oxrcon",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/context#libregistercontext",
+      "lib.registerContext({",
+      "  id = ${1:id},",
+      "  title = ${2:title},",
+      "  canClose = ${3:canClose},",
+      "  options = {}",
+      "})",
+      "lib.showContext(${1:id})"
+    ],
+    "description": "Ox Register and Show a Context menu"
+  },
+  "Ox Show Context": {
+    "prefix": "oxscon",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/context#libshowcontext",
+      "lib.showContext(${1:id})"
+    ],
+    "description": "Ox Show Context"
+  },
+  "Ox Input Dialog": {
+    "prefix": "oxidiag",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/input#libinputdialog",
+      "--@param variable string",
+      "--@param dialogTitle string",
+      "--@param options table https://overextended.dev/ox_lib/Modules/Interface/Client/input#field-type-properties",
+      "--@return table",
+      "local ${1:variable} = lib.inputDialog(${2:dialogTitle}, {--[[options]]})"
+    ],
+    "description": "Ox Input Dialog"
+  },
+  "OX Register Menu": {
+    "prefix": "oxrmenu",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/menu#libregistermenu",
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/menu#usage-example",
+      "lib.registerMenu({",
+      "  id = ${1:id},",
+      "  title = ${2:title},",
+      "  position = 'top-right',",
+      "  options = {}",
+      "})"
+    ],
+    "description": "OX Register Menu"
+  },
+  "OX Show Menu": {
+    "prefix": "oxsmenu",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/menu#libshowmenu",
+      "lib.showMenu(${1:id})"
+    ],
+    "description": "OX Show Menu"
+  },
+  "CLIENT/ OX Notification": {
+    "prefix": "oxnoti",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/notify#libnotify",
+      "lib.notify({",
+      "    title = ${1:title},",
+      "    description = ${2:description},",
+      "    type = 'success' --'inform' or 'error' or 'success'or 'warning'",
+      "})"
+    ],
+    "description": "CLIENT/ OX Notification"
+  },
+  "SERVER / OX Notification": {
+    "prefix": "oxnoti",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/notify#libnotify",
+      "TriggerClientEvent('ox_lib:notify', source, {",
+      "    title = ${1:title},",
+      "    description = ${2:description},",
+      "    type = 'success' --'inform' or 'error' or 'success'or 'warning'",
+      "})"
+    ],
+    "description": "SERVER / OX Notification"
+  },
+  "CLIENT/ OX Square Progress Bar": {
+    "prefix": "oxsbar",
+    "body": [
+      "if lib.progressBar({",
+      "    duration = 2000,",
+      "    label = ${1:label},",
+      "    useWhileDead = false,",
+      "    canCancel = true,",
+      "    disable = {",
+      "        --car = true,",
+      "    },",
+      "    anim = {",
+      "       -- dict = 'mp_player_intdrink',",
+      "       -- clip = 'loop_bottle'",
+      "    },",
+      "    prop = {",
+      "       -- model = `prop_ld_flow_bottle`,",
+      "       -- pos = vec3(0.03, 0.03, 0.02),",
+      "       -- rot = vec3(0.0, 0.0, -1.5)",
+      "    },",
+      "}) then ",
+      "    print('Do stuff when complete') ",
+      "else ",
+      "    print('Do stuff when cancelled') ",
+      "end"
+    ],
+    "description": "CLIENT/ OX Square Progress Bar"
+  },
+  "CLIENT/ OX Circle Progress Bar": {
+    "prefix": "oxcbar",
+    "body": [
+      "if lib.progressCircle({",
+      "    duration = 2000,",
+      "    position = 'bottom',",
+      "    useWhileDead = false,",
+      "    canCancel = true,",
+      "    disable = {",
+      "       -- car = true,",
+      "    },",
+      "    anim = {",
+      "        --dict = 'mp_player_intdrink',",
+      "        --clip = 'loop_bottle'",
+      "    },",
+      "    prop = {",
+      "       --model = `prop_ld_flow_bottle`,",
+      "       --pos = vec3(0.03, 0.03, 0.02),",
+      "       --rot = vec3(0.0, 0.0, -1.5)",
+      "    },",
+      "}) then ",
+      "    print('Do stuff when complete') ",
+      "else ",
+      "    print('Do stuff when cancelled') ",
+      "end"
+    ],
+    "description": "CLIENT/ OX Circle Progress Bar"
+  },
+  "CLIENT/ OX Show TextUI": {
+    "prefix": "oxsui",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/textui#libshowtextui",
+      "lib.showTextUI(${1:text})"
+    ],
+    "description": "CLIENT/ OX Show TextUI"
+  },
+  "CLIENT/ OX Hide TextUI": {
+    "prefix": "oxhui",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Interface/Client/textui#libshowtextui",
+      "lib.hideTextUI()"
+    ],
+    "description": "CLIENT/ OX Hide TextUI"
+  },
+  "SERVER / OX Add command": {
+    "prefix": "oxacomm",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/AddCommand/Server",
+      "lib.addCommand(${1:commandName}, {",
+      "    help = ${2:help},",
+      "    params = {",
+      "        --{",
+      "           -- name = 'target',",
+      "           -- type = 'playerId',",
+      "          --  help = 'Target player\\'s server id',",
+      "        --},",
+      "    },",
+      "    restricted = 'group.admin'",
+      "}, function(source, args, raw)",
+      "",
+      "end)"
+    ],
+    "description": "SERVER / OX Add command"
+  },
+  "CLIENT / OX Add Key bind": {
+    "prefix": "oxakey",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/AddKeybind/Client",
+      "local ${1:variable} = lib.addKeybind({",
+      "    name = ${2:name},",
+      "    description = ${3:description},",
+      "    defaultKey = ${4:key},",
+      "    onPressed = function(self)",
+      "       -- print(('pressed %s (%s)'):format(self.currentKey, self.name))",
+      "    end,",
+      "    onReleased = function(self)",
+      "       -- print(('released %s (%s)'):format(self.currentKey, self.name))",
+      "    end",
+      "})",
+      "--https://overextended.dev/ox_lib/Modules/AddKeybind/Client#enable--disable-keybinds",
+      "--${1:variable}:disable(true) -- disables the keybind",
+      "--${1:variable}:disable(false) -- enables the keybind"
+    ],
+    "description": "CLIENT / OX Add Key bind"
+  },
+  "CLIENT/ OX On Cache": {
+    "prefix": "oxcache",
+    "body": [
+      "--${1:key} =  ped or vehicle or seat or weapon",
+      "lib.onCache(${1:key}, function(value)",
+      "end)"
+    ],
+    "description": "CLIENT/ OX On Cache"
+  },
+  "CLIENT/ OX Callback": {
+    "prefix": "oxcc",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Callback/Lua/Client#trigger-server-callback",
+      "lib.callback(${1:event}, ${false:default}, function(ret)",
+      "  ",
+      "end)"
+    ],
+    "description": "CLIENT/ OX Callback"
+  },
+  "CLIENT/ OX Callback Await": {
+    "prefix": "oxcca",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Callback/Lua/Client#libcallbackawait",
+      "lib.callback.await(${1:name}, ${2:false:default}, ...)",
+      ""
+    ],
+    "description": "CLIENT/ OX Callback Await"
+  },
+  "SERVER/ OX Callback Register": {
+    "prefix": "oxscr",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Callback/Lua/Client#libcallbackawait",
+      "lib.callback.register(${1:event}, function(source,...)",
+      "--",
+      "end)",
+      ""
+    ],
+    "description": "SERVER/ OX Callback Register"
+  },
+  "SERVER/ OX Cron": {
+    "prefix": "oxscron",
+    "body": [
+      "--https://overextended.dev/ox_lib/Modules/Cron/Server#cron-expression",
+      "lib.cron.new(expression, job, options)",
+      ""
+    ],
+    "description": "SERVER/ OX Cron"
+  }
+}
