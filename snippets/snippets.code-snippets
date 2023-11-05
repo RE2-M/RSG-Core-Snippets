@@ -297,7 +297,146 @@
   // RSG CLIENT :END
 
   // RSG SERVER :START
+  "RSG SERVER/Get the coords of the entity passed, return a vector4(x,y,z,w) w is heading": {
+		"prefix": ["GetCoords", "SGC"],
+		"body": ["local Coords = RSGCore.Functions.GetCoords(${1:entity})"],
+		"description": "SERVER/Get the coords of the entity passed, return a vector4(x,y,z,w) w is heading"
+	},
+  "RSG SERVER/Return the passed identifier or nil if nothing is found": {
+		"prefix": "GetIdentifier",
+		"body": ["local idType = RSG Core.Functions.GetIdentifier(${1:source},${2:idtype})", ""],
+		"description": "SERVER/Return the passed identifier or nil if nothing is found"
+	},
+  "RSG SERVER/Return the source of the passed identifier": {
+		"prefix": "GetSource",
+		"body": ["local source = RSGCore.Functions.GetSource(${1:identifier})", ""],
+		"description": "SERVER/Return the source of the passed identifier"
+	},
+  "RSG SERVER/Return all the data from the respective source": {
+		"prefix": "GetPlayer",
+		"body": ["local Player = RSGCore.Functions.GetPlayer(${1:source})", ""],
+		"description": "SERVER/Return all the data from the respective source"
+	},
+	"RSG SERVER/Return all the data from the respective citizenid": {
+		"prefix": "GetPlayerByCitizenId",
+		"body": ["local Player = RSGCore.Functions.GetPlayerByCitizenId(${1:citizenid})", ""],
+		"description": "SERVER/Return all the data from the respective citizenid"
+	},
+  "RSG SERVER/Return all the data from the offline Player with CitizenId": {
+		"prefix": "GetOfflinePlayerByCitizenId",
+		"body": ["local Player = RSGCore.Functions.GetOfflinePlayerByCitizenId(${1:citizenid})", ""],
+		"description": "SERVER/Return all the data from the offline Player with CitizenId"
+	},
+  "RSG SERVER/Return all players": {
+		"prefix": "GetPlayers",
+		"body": ["local Players = RSGCore.Functions.GetPlayers()", ""],
+		"description": "SERVER/Return all players"
+	},
+	"RSG SERVER/Return all the DATA from all players": {
+		"prefix": "GetRSGPlayers",
+		"body": ["local Players = RSGCore.Functions.GetQBPlayers()", ""],
+		"description": "SERVER/Return all the DATA from all players this is not the same as GetPlayers, that only return the source"
+	},
+  "RSG SERVER/Return an array players and the amount of players on duty for the selected job": {
+		"prefix": "GetPlayersOnDuty",
+		"body": ["local players,count= RSGCore.Functions.GetPlayersOnDuty(${1:job})", ""],
+		"description": "SERVER/Return an array players and the amount of players on duty for the selected job"
+	},
+	"RSG SERVER/Returns only the amount of players on duty for the specified job": {
+		"prefix": "GetDutyCount",
+		"body": ["local count= RSGCore.Functions.GetDutyCount(${1:job})", ""],
+		"description": "SERVER/Returns only the amount of players on duty for the specified job"
+	},
+  "RSG SERVER/Returns the objects related to buckets, first returned value is the player buckets, second one is entity buckets": {
+		"prefix": "GetBucketObjects",
+		"body": ["local count = RSGCore.Functions.GetBucketObjects()", ""],
+		"description": "SERVER/Returns the objects related to buckets, first returned value is the player buckets, second one is entity buckets"
+	},
+	"RSG SERVER/Will set the provided player id / source into the provided bucket id, return true if success or false": {
+		"prefix": "SetBucketObjects",
+		"body": ["local count = RSGCore.Functions.SetPlayerBucket(${1:source},${2:buket})", ""],
+		"description": "SERVER/Will set the provided player id / source into the provided bucket id, return true if success or false"
+	},
 
+  "RSG SERVER/Will set any entity into the provided bucket, for example peds / vehicles / props / etc.": {
+		"prefix": "SetEntityBucket",
+		"body": ["local count = RSGCore.Functions.SetEntityBucket(${1:entity},${2:buket})", ""],
+		"description": "SERVER/Will set any entity into the provided bucket, for example peds / vehicles / props / etc."
+	},
+	"RSG SERVER/Will return an array of all the player ids inside the current bucket or false": {
+		"prefix": "GetPlayersInBucket",
+		"body": ["local Current = RSGCore.Functions.GetPlayersInBucket(${1:bucket})", ""],
+		"description": "SERVER/Will return an array of all the player ids inside the current bucket or false"
+	},
+  "RSG SERVER/Will return an array of all the player ids inside the current bucket or false": {
+		"prefix": "GetPlaEntitiesInBucket",
+		"body": ["local Current = RSGCore.Functions.GetPlaEntitiesInBucket(${1:bucket})", ""],
+		"description": "SERVER/Will return an array of all entity ids inside the current bucket or false"
+	},
+  "RSG SERVER/ SpawnVehicle return Vehicle that spawn": {
+		"prefix": "SpawnVehicle",
+		"body": ["local veh = RSGCore.Functions.SpawnVehicle(${1:source}, ${2:model}, ${3:coords}, ${4:warp})", ""],
+		"description": "SERVER/SpawnVehicle return Vehicle that spawn"
+	},
+  "RSG SERVER/ CreateVehicle return Vehicle that spawn": {
+		"prefix": "SpawnVehicle",
+		"body": ["local veh = RSGCore.Functions.CreateVehicle(${1:source}, ${2:model}, ${3:coords}, ${4:warp})", ""],
+		"description": "SERVER/CreateVehicle return Vehicle that spawn"
+	},
+  "RSG SERVER/Trigger a Client event with a return of a value": {
+    "prefix": ["TriggerClientCallback", "TCC"],
+    "body": [
+      "RSGCore.Functions.TriggerClientCallback(${1:name},function(${2:returnValue})",
+      "",
+      "end,${3:Datasend})"
+    ],
+    "description": "CLIENT/Trigger a client event with a return of a value"
+  },
+  "RSG SERVER/Create a callback and return a value": {
+		"prefix": ["CreateCallback", "CCallback"],
+		"body": ["RSGCore.Functions.CreateCallback(${1:name},function(source,cb,${2:args}) ", "", "end)", ""],
+		"description": "SERVER/Create a callback and return a value"
+	},
+  "SERVER/Create a item": {
+		"prefix": "CreateUseableItem",
+		"body": ["RSGCore.Functions.CreateUseableItem(${1:item},cb)", ""],
+		"description": "SERVER/Create a item"
+	},
+  "RSG SERVER/Kick a player from the server": {
+		"prefix": "Kick",
+		"body": ["RSGCore.Functions.Kick(${1:source},${2:reason},${3:setKickReason},${4:deferrals})", ""],
+		"description": "SERVER/Kick a player from the server"
+	},
+  "RSG SERVER/IsWhitelisted Check if player whitelisted": {
+		"prefix": "IsWhitelisted",
+		"body": ["RSGCore.Functions.IsWhitelisted(${1:source})", ""],
+		"description": "SERVER/IsWhitelisted Check if player whitelisted"
+	},
+  "RSG SERVER/Add Permission for a player, always create the permission on the server.cfg": {
+		"prefix": "AddPermission",
+		"body": ["RSGCore.Functions.AddPermission(${1:source},${2:permission})"],
+		"description": "SERVER/Add Permission for a player, always create the permission on the server.cfg"
+	},
+  "RSG SERVER/Remove Permission for a player, always create the permission on the server.cfg": {
+		"prefix": "AddPermission",
+		"body": ["RSGCore.Functions.RemovePermission(${1:source},${2:permission})"],
+		"description": "SERVER/Add Permission for a player, always create the permission on the server.cfg"
+	},
+  "RSG SERVER/HasPermission for a player": {
+		"prefix": "HasPermission",
+		"body": ["RSGCore.Functions.HasPermission(${1:source},${2:permission})"],
+		"description": "SERVER/HasPermission for a player, Return if Player have permission"
+	},
+  "RSG SERVER/GetPermission for a player": {
+		"prefix": "GetPermission",
+		"body": ["RSGCore.Functions.GetPermission(${1:source})"],
+		"description": "SERVER/GetPermission Return Player permissions"
+	},
+  "RSG SERVER/HasItem": {
+		"prefix": "HasItem",
+		"body": ["RSGCore.Functions.HasItem(${1:source}, ${2:items}, ${3:amount})"],
+		"description": "SERVER/HasItem Check if Player have amount of item"
+	},
   // RSG SERVER :END
 
   // OXLib

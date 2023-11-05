@@ -1,9 +1,9 @@
 {
   "name": "rsg-core-snippets",
-  "publisher": "Hamidreza",
+  "publisher": "hamf1",
   "displayName": "RSG-Core Snippets",
   "description": "A collection of snippets to work with rsg-core",
-  "version": "1.7.0",
+  "version": "0.1.0",
   "icon": "images/logo.png",
   "homepage": "https://github.com/RE2-M/RSG-Core-Snippets/blob/main/README.md",
   "repository": {
