@@ -397,7 +397,7 @@
 		"body": ["RSGCore.Functions.CreateCallback(${1:name},function(source,cb,${2:args}) ", "", "end)", ""],
 		"description": "SERVER/Create a callback and return a value"
 	},
-  "SERVER/Create a item": {
+  "RSG SERVER/Create a item": {
 		"prefix": "CreateUseableItem",
 		"body": ["RSGCore.Functions.CreateUseableItem(${1:item},cb)", ""],
 		"description": "SERVER/Create a item"
@@ -439,6 +439,48 @@
 	},
   // RSG SERVER :END
 
+  // RSG SHARE : START
+  "RSG SERVER/RandomInt": {
+		"prefix": "RandomInt",
+		"body": ["RSGCore.Shared.RandomInt(${1:length})"],
+		"description": "SERVER/RandomInt Return number with length"
+	},
+  "RSG SERVER/RandomStr": {
+		"prefix": "RandomStr",
+		"body": ["RSGCore.Shared.RandomStr(${1:length})"],
+		"description": "SERVER/RandomStr Return String with length"
+	},
+  "RSG SERVER/SplitStr": {
+		"prefix": "RandomStr",
+		"body": ["RSGCore.Shared.RandomStr(${1:str}, ${2:delimiter})"],
+		"description": "SERVER/RandomStr Return String Split with Delimiter"
+	},
+  "RSG SERVER/Trim": {
+		"prefix": "Trim",
+		"body": ["RSGCore.Shared.Trim(${1:str})"],
+		"description": "SERVER/Trim Return Trim String"
+	},
+  "RSG SERVER/FirstToUpper": {
+		"prefix": "FirstToUpper",
+		"body": ["RSGCore.Shared.FirstToUpper(${1:str})"],
+		"description": "SERVER/FirstToUpper Return First Upper Value"
+	},
+  "RSG SERVER/Round": {
+		"prefix": "Round",
+		"body": ["RSGCore.Shared.Round(${1:value}, ${2:numDecimalPlaces})"],
+		"description": "SERVER/Round Return Rounded Number with decimal"
+	},
+  "RSG SERVER/ChangeVehicleExtra": {
+		"prefix": "ChangeVehicleExtra",
+		"body": ["RSGCore.Shared.ChangeVehicleExtra(${1:vehicle}, ${2:extra}, ${3:enable})"],
+		"description": "SERVER/ChangeVehicleExtra"
+	},
+  "RSG SERVER/SetDefaultVehicleExtras": {
+		"prefix": "SetDefaultVehicleExtras",
+		"body": ["RSGCore.Shared.SetDefaultVehicleExtras(${1:vehicle}, ${2:config})"],
+		"description": "SERVER/SetDefaultVehicleExtras"
+	},
+  // RSG SHARE : END
   // OXLib
   "Ox Register Context CLIENT": {
     "prefix": "oxrcon",

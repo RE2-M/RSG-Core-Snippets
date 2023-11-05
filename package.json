@@ -3,7 +3,7 @@
   "publisher": "hamf1",
   "displayName": "RSG-Core Snippets",
   "description": "A collection of snippets to work with rsg-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "icon": "images/logo.png",
   "homepage": "https://github.com/RE2-M/RSG-Core-Snippets/blob/main/README.md",
   "repository": {
