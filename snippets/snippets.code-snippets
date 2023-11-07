@@ -481,6 +481,124 @@
 		"description": "SERVER/SetDefaultVehicleExtras"
 	},
   // RSG SHARE : END
+
+  // RSG TARGET : START
+  "RSG TARGET/ADD BOX ZONE": {
+		"prefix": ["AddBoxZone","ABZ","abz"],
+		"body": [
+      "exports['rsg-target']:AddBoxZone(${1:name}, ${2:vector3Coord}, ${3:length}, ${4:width}, {",
+        "name=${5:name},",
+        "heading=${6:heading},",
+        "debugPoly=false,",
+        "minZ=${7:minZ},",
+        "maxZ=${8:maxZ},",
+        "}, {",
+            "options = {",
+              "--[[options]]",
+            "},",
+            "distance = ${9:distance}"
+      "})"
+    ],
+		"description": "TARGET/ADD BOX ZONE"
+	},
+  "RSG TARGET/ADD CIRCLE ZONE": {
+		"prefix": ["AddCircleZone","ACZ","acz"],
+		"body": [
+      "exports['rsg-target']:AddCircleZone(${1:name}, ${2:vector3Coord}, ${3:radius}, {",
+        "name=${4:name},",
+        "debugPoly=false,",
+        "}, {",
+            "options = {",
+              "--[[options]]",
+            "},",
+            "distance = ${5:distance}"
+      "})"
+    ],
+		"description": "TARGET/ADD CIRCLE ZONE"
+	},
+  "RSG TARGET/ADD POLY ZONE": {
+		"prefix": ["AddPolyZone","APZ","apz"],
+		"body": [
+      "exports['rsg-target']:AddPolyzone(${1:name}, ${2:point}, {",
+        "name=${3:name},",
+        "minZ=${4:minZ},",
+        "maxZ=${5:maxZ},",
+        "debugPoly=false,",
+        "}, {",
+            "options = {",
+              "--[[options]]",
+            "},",
+            "distance = ${6:distance}"
+      "})"
+    ],
+		"description": "TARGET/ADD POLY ZONE"
+	},
+  "RSG TARGET/ADD TARGET BONE": {
+		"prefix": ["AddTargetBone","ATB","atb"],
+		"body": [
+      "exports['rsg-target']:AddTargetBone(${1:bone}, {"
+            "options = {"
+              "--[[options]]"
+            "},"
+            "distance = ${2:distance}"
+      "})"
+    ],
+		"description": "TARGET/ADD TARGET BONE"
+	},
+  "RSG TARGET/ADD TARGET ENTITY": {
+		"prefix": ["AddTargetEntity","ATE","ate"],
+		"body": [
+      "exports['rsg-target']:AddTargetEntity(${1:entity}, {"
+            "options = {"
+              "--[[options]]"
+            "},"
+            "distance = ${2:distance}"
+      "})"
+    ],
+		"description": "TARGET/ADD TARGET ENTITY"
+	},
+  "RSG TARGET/ADD ENTITY ZONE": {
+		"prefix": ["AddEntityZone","AEZ","aez"],
+		"body": [
+      "exports['rsg-target']:AddEntityZone(${1:name}, ${2:entity},{"
+        "name=${3:name},",
+        "debugPoly=false,",
+      "}, {"
+            "options = {"
+              "--[[options]]"
+            "},"
+            "distance = ${4:distance}"
+      "})"
+    ],
+		"description": "TARGET/ADD ENTITY ZONE"
+	},
+  "RSG TARGET/ADD TARGET ENTITY": {
+		"prefix": ["AddTargetModel","ATM","atm"],
+		"body": [
+      "exports['rsg-target']:AddTargetModel(${1:models}, {"
+            "options = {"
+              "--[[options]]"
+            "},"
+            "distance = ${2:distance}"
+      "})"
+    ],
+		"description": "TARGET/ADD TARGET ENTITY"
+	},
+  "RSG TARGET/TARGET OPTION": {
+		"prefix": ["TargetOption","TO","to"],
+		"body": [
+      "{",
+        "type = ${1:type}, --server or client",
+        "event = ${2:event},",
+        "icon = ${3:icon},",
+        "label = ${4:label},",
+        "job = $${5:job},",
+    "},"
+    ],
+		"description": "TARGET/TARGET OPTION"
+	},
+  // RSG TARGET : END
+
   // OXLib
   "Ox Register Context CLIENT": {
     "prefix": "oxrcon",
